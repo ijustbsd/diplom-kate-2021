@@ -2,7 +2,7 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
-\usepackage{amssymb, amsfonts, amsmath, amsthm, microtype, pdfpages, indentfirst}
+\usepackage{amssymb, amsfonts, amsmath, amsthm, mathtools, microtype, pdfpages, indentfirst}
 \usepackage[unicode, colorlinks=true, allcolors=black]{hyperref}
 \usepackage{graphicx}
 \graphicspath{{images/}}
@@ -20,6 +20,8 @@
 \newtheorem{definition}{Определение}
 \newtheorem{remark}[definition]{Замечание}
 \newtheorem{lemma}[definition]{Лемма}
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 
 
 \begin{document}

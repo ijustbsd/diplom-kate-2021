@@ -12,10 +12,14 @@
 \usepackage{setspace}
 \onehalfspacing
 
-\usepackage[style=gost-numeric]{biblatex}
+\usepackage[style=gost-numeric, maxbibnames=42]{biblatex}
 \addbibresource{diplom.bib}
 
+\numberwithin{equation}{section}
+
 \newtheorem{definition}{Определение}
+\newtheorem{remark}[definition]{Замечание}
+\newtheorem{lemma}[definition]{Лемма}
 
 
 \begin{document}

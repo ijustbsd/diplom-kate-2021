@@ -6,6 +6,121 @@
 
 \subsection{Дробная производная}
 
+В этом разделе мы напомним некоторые понятия и определения, которые нам понадобятся в дальнейшем
+(подробности можно найти в \cite{gorenflo}, \cite{kilbas}, \cite{podlubny}, \cite{zhou}).
+
+Пусть $E$ Банахово пространство над полем вещественных чисел.
+
+\begin{definition}
+    Дробной производной Римана-Лиувилля порядка $q \in (0, 1)$ непрерывной функции $g:[0, a] \rightarrow E$ называется
+    функция $D_{0}^{q}g$ определённая в следующем виде:
+    $$D_{0}^{q}g(t) = \frac{1}{\Gamma(1 - q)}\frac{d}{dt}\int_{0}^{t}(t - s)^{-q}g(s)ds$$
+    при условии, что правая часть этого равенства определена корректно.
+\end{definition}
+
+Здесь $\Gamma$ это гамма-функция Эйлера $$\Gamma(r) = \int_{0}^{\infty}s^{r-1}e^{-s}ds$$
+
+\begin{definition}
+    Дробной производной Капуто порядка $q \in (0, 1)$ непрерывнйо функции $g:[0, a] \rightarrow E$ называется функция
+    ${}^CD_{0}^{q}g$ определённая следующим способом:
+    $${}^CD_{0}^{q}g(t) = \Big(D^q(g(\cdot) - g(0))\Big)(t)$$
+    при условии, что правая часть этого равенства определена корректно.
+\end{definition}
+
+\begin{definition}
+    Функция
+    $$E_{q,\beta}(z) = \sum_{n=0}^{\infty}\frac{z^n}{\Gamma(qn + \beta)}, \ \ \ q, \beta > 0, z \in \mathbb{C}$$
+    называется функцией Миттаг-Леффлера.
+\end{definition}
+
+Функция Миттаг-Леффлера имеет следующее асимптотическое представление при $z \rightarrow \infty$:
+
+\begin{equation}
+    E_{q,\beta}(z) = 
+    \begin{cases}
+        \frac{1}{q}z^{\frac{1-\beta}{q}}e^{z^{\frac{1}{q}}} - \sum_{n=1}^{N-1}\frac{z^{-n}}{\Gamma(\beta-qn)} +
+        O(|z|^{-N}), \ \ \ |argz| \leq \frac{1}{2} \pi q,\\
+        - \sum_{n=1}^{N-1} \frac{z^{-n}}{\Gamma(\beta-qn)} + O(|z|^{-N}), \ \ \ |arg(-z)| \leq (1 - \frac{1}{2}q)\pi.
+    \end{cases}
+\end{equation}
+
+Обозначим $E_{q,1}$ через $E_{q}$. Обратите внимание, что вторая из приведенных выше формул означает, что в случае
+$z = \tau < 0$ и $0 < q < 1$ мы имеем
+\begin{equation}
+    E_{q}(\tau) \rightarrow 0 \ \text{при} \ \tau \rightarrow - \infty
+\end{equation}
+
+Заметим, что из отношений (см. \cite{wang}):
+
+\begin{equation*}
+    E_{q}(-z) = \int_{0}^{\infty} \xi(\theta)e^{-z\theta}d\theta
+\end{equation*}
+
+\noindent и
+
+\begin{equation*}
+    E_{q,q}(-z) = \int_{0}^{\infty} q\theta \xi(\theta)e^{-z\theta}d\theta,
+\end{equation*}
+
+\noindent где
+
+\begin{equation}
+    \xi_{q}(\theta) = \frac{1}{q} \theta^{-1-\frac{1}{q}}\Psi_{q}(\theta^{\frac{-1}{q}}),
+\end{equation}
+
+\begin{equation}
+    \Psi_{q}(\theta) = \frac{1}{\pi} \sum_{n=1}^{\infty} (-1)^{n-1} \theta^{-qn-1} \frac{\Gamma(nq+1)}{n!} \sin(n \pi q), \ 
+    \theta \in \mathbb{R}_{+},
+\end{equation}
+
+\noindent следует, что
+
+\begin{equation}
+    E_{q}(\tau) > 0, E_{q,q}(\tau) > 0 \ \text{для} \ \tau < 0.
+\end{equation}
+
+\begin{remark}
+    (См. \cite{zhang}) $\int_{0}^{\infty} \theta \xi_{q}(\theta) d\theta = \frac{1}{\Gamma(q+1)}$,
+    $\int_{0}^{\infty} \xi_{q}(\theta) d\theta = 1$, $\xi_{q}(\theta) \geq 0$.
+\end{remark}
+
+Рассмотрим скалярное уравнение вида
+
+\begin{equation}
+    \label{eq:dxt}
+    {}^{C}D^{q} x(t) = \lambda x(t) + f(t), \ \ \ t \in [0, T]
+\end{equation}
+
+\noindent с начальным условием
+
+\begin{equation}
+    \label{eq:dxt_x0}
+    x(0) = x_{0},
+\end{equation}
+
+\noindent где $\lambda \ in \mathbb{R}, f : [0, T] \rightarrow \mathbb{R}$ - непрерывная функция. Решением этого уравнения мы
+будем называть непрерывную функцию $x : [0, T] \rightarrow \mathbb{R}$, удовлетворяющую условию (\ref{eq:dxt_x0}),
+дробная производная ${}^{C}D^{q}x$ которой также непрерывная и удовлетворяет выражению (\ref{eq:dxt}). Известно, что единственное
+решение данного уравнения имеет вид
+
+\begin{equation}
+    x(t) = E_{q}(\lambda t^{q})x_{0} + \int_{0}^{t} (t-s)^{q-1} E_{q,q}(\lambda(t-s)^{q})f(s)ds.
+\end{equation}
+
+Нам понадобится следующее вспомогательное утверждение, являющееся аналогом известной
+леммы Гронуолла — Беллмана об интегральных неравенствах \cite{kamenskii_aa}.
+
+\begin{lemma}
+    Пусть ограниченная измеримая функция $\omega: [0, T] \rightarrow \mathbb{R}$ удовлетворяет интегральному неравенству
+    \begin{equation}
+        \omega(t) \leq E_{q} (-\eta t^{q}) \omega(0) + \int_{0}^{t}(t-s)^{q-1} E_{q,q}(-\eta(t-s)^{q})\Big(K + m\omega(s)\Big)ds
+    \end{equation}
+    где $K \geq 0, \ 0 < m < \eta$. Тогда
+    \begin{equation*}
+        \omega(t) \leq E_{q} \Big((-\eta+m)t^{q}\Big) \omega(0) + K \int_{0}^{t} (t-s)^{q} E_{q,q} \Big((-\eta+m)(t-s)^{q}\Big)ds.
+    \end{equation*}
+\end{lemma}
+
 \subsection{Меры некомпактности}
 
 \clearpage

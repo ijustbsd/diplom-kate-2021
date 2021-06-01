@@ -14,5 +14,6 @@
 *.xml
 
 *.pdf
+!data/*.pdf
 
 tp-output.fodt

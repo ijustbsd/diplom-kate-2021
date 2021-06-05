@@ -1,6 +1,6 @@
 THEME = О функции Миттаг-Леффлера и её приложениях в теории дифференциальных уравнений в дробных производных
 STUDENT = Е.С. Тарасова
-DEGREE = д.ф.-м.н., проф.
+DEGREE = д. ф.-м. н., проф.
 DIRECTOR = М.И. Каменский
 
 SED = "s/{{theme}}/${THEME}/; s/{{student}}/${STUDENT}/; s/{{degree}}/${DEGREE}/; s/{{director}}/${DIRECTOR}/"

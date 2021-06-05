@@ -223,6 +223,62 @@ $$\nu(\Omega) = \bigg( \varphi(\Omega),mod_{C}(\Omega) \bigg)$$
     каждого открытого множества $V \subset \mathcal{E}$ открыто в $X$.
 \end{definition}
 
+\begin{definition}
+    П.н.с. мультиотображение $\mathcal{F}: \Lambda \times X \rightarrow K(\mathcal{E})$ называется уплотняющим относительно
+    МНК $\beta$ (или $\beta$-уплотняющим), если для любого ограниченного множества $\Omega \subseteq X$, которое не является относительно
+    компактным, выполняется
+    $$\beta(\mathcal{F}(\Omega)) \ngeqq \beta(\Omega).$$
+\end{definition}
+
+В более общем смысле, учитывая метрическое пространство $\Lambda$ параметров, мы будем говорить, что п.н.с. мультиотображение
+$\Gamma: \Lambda \times X \rightarrow K(\mathcal{E})$ является уплотняющим семейством по отношению к МНК $\beta$ (или $\beta$-уплотняющим
+семейством), если для каждого ограниченного множества $\Omega \subseteq X$, которое не является относительно компактным, выполняется
+
+$$\beta(\Gamma(\Lambda \times \Omega)) \ngeqq \beta(\Omega).$$
+
+Пусть $V \subset \mathcal{E}$ - ограниченное открытое множество, $\beta$ - монотонная невырожденная МНК в $\mathcal{E}$
+и $\mathcal{F}: \overline{V} \rightarrow Kv(\mathcal{E})$ - $\beta$-уплотняющее мультиотображение такое, что $x \notin \mathcal{F}(x)$
+для всех $x \in \partial V$, где $\overline{V}$ и $\partial V$ обозначают замыкание и границу множества $V$.
+
+В таких условиях \textit{топологическая степень}
+
+$$deg(i - \mathcal{F}, \overline{V})$$
+
+\noindent соответствующего векторного мультиполя $i - \mathcal{F}$, удовлетворяющего стандартным свойствам, где $i$ -
+тождественное отображение на $\mathcal{E}$. В частности, из условия
+
+$$deg(i - \mathcal{F}, \overline(V)) \neq 0$$
+
+\noindent следует, что \textit{множество неподвижных точек} $Fix\mathcal{F} = \{x: x \in \mathcal{F}(x)\}$ является непустым подмножеством $V$.
+
+Чтобы описать следующее свойство, введем следующее понятие.
+
+\begin{definition}
+    Преположим, что $\beta$-уплотняющие мультиотображения $\mathcal{F}_0, \mathcal{F}_1: \overline{V} \rightarrow Kv(\mathcal{E})$
+    не имеют неподвижных точек на границе $\delta V$ и существует $\beta$-уплотняющее семейство
+    $\mathfrak{H}: [0, 1] \times \overline{V} \rightarrow K(\mathcal{E})$ такое, что:
+    \begin{enumerate}
+        \item $x \notin \mathfrak{H}(\lambda, x)$ для всех $(\lambda, x) \in [0, 1] \times \partial V$;
+        \item $\mathfrak{H}(0, \cdot{}) = \mathcal{F}_0; \ \mathfrak{H}(1, \cdot{}) = \mathcal{F}_1.$
+    \end{enumerate}
+    тогда мультиполя $\Phi_0 = i - \mathcal{F}_0$ и $\Phi_1 = i - \mathcal{F}_1$ называются гомотопическими:
+    $$\Phi_0 \sim \Phi_1$$
+\end{definition}
+
+\textit{Свойство гомотопической инвариантности топологической степени} утверждает, что если $\Phi_0 \sim \Phi_1$, то
+$deg(i - \mathcal{F}_0, \overline{V}) = deg(i - \mathcal{F}_1, \overline{V})$.
+
+Отметим еще следующее свойство топологической степени, которое нам понадобится в дальнейшем. \textit{Свойство нормализации}.
+Если $\mathcal{F}(x) \equiv A \in K(\mathcal{E})$, то
+
+\begin{equation*}
+    deg(i - \mathcal{F}, \overline{V}) = 
+    \begin{cases}
+        1, \ \text{если} \ A \subset V, \\
+        0, \ \text{если} \ A \cap \overline{V} = \emptyset.
+    \end{cases}
+\end{equation*}
+
 \clearpage
 
 \section{Априорные оценки решений}

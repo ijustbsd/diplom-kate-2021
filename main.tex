@@ -158,7 +158,70 @@ $z = \tau < 0$ и $0 < q < 1$ мы имеем
     \end{equation*}
 \end{lemma}
 
-\subsection{Меры некомпактности}
+\subsection{Меры некомпактности и уплотняющие многозначные отображения}
+
+Напомним некоторые понятия и факты (подробности можно найти, например, в 27, 28).
+
+Пусть $\mathcal{E}$ - Банахово пространство. Введем следующие обозначения:
+
+\begin{itemize}
+    \item $Pb(\mathcal{E}) = \{A \subseteq \mathcal{E} : A \neq \emptyset \ \text{ограничено}\}$;
+    \item $Pv(\mathcal{E}) = \{A \in Pb(\mathcal{E}) : A \ \text{выпукло}\}$;
+    \item $K(\mathcal{E}) = \{A \in Pb(\mathcal{E}) : A \ \text{компактно}\}$;
+    \item $Kv(\mathcal{E}) = Pv(\mathcal{E}) \cap K(\mathcal{E})$.
+\end{itemize}
+
+\begin{definition}
+    Пусть $(\mathcal{A}, \geq)$ - частично упорядоченное множество. Функция $\beta : Pb(\mathcal{E}) \rightarrow \mathcal{A}$ называется
+    мера некомпактности (МНК) в $\mathcal{E}$, если для каждого $\Omega \in Pb(\mathcal{E})$ выполнено:
+    $$\beta(\overline{co}\Omega) = \beta(\Omega),$$
+    где $\overline{co}\Omega$ обозначает замыкание выпуклой оболочки $\Omega$.
+\end{definition}
+
+Мера некомпактности $\beta$ называется:
+
+\begin{enumerate}
+    \item \textit{монотонной}, если для каждого $\Omega_0, \Omega_1 \in Pb(\mathcal{E})$, из $\Omega_0 \subseteq \Omega_1$
+    следует, что $\beta(\Omega_0) \leq \beta(\Omega_1)$;
+    \item \textit{невырожденной}, если для для каждого $a \in \mathcal{E}$ и каждого $\Omega \in Pb(\mathcal{E})$
+    выполняется $\beta({a} \cup \Omega) = \beta(\Omega)$;
+\end{enumerate}
+
+Если $\mathcal{A}$ - конус в Банаховом пространстве, МНК $\beta$ называется:
+
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item \textit{регулярной}, если $\beta(\Omega) = 0$ равносильно относительной компактности $\Omega \in Pb(\mathcal{E})$;
+    \item \textit{вещественной}, если $\mathcal{A}$ - множество всех вещественных чисел $\mathbb{R}$ с естественным порядком;
+    \item \textit{алгебраически полуаддитивной}, если $\beta(\Omega_0 + \Omega_1) \leq \beta(\Omega_0) + \beta(\Omega_1)$ для
+    любых $\Omega_0, \Omega_1 \in Pb(\mathcal{E})$.
+\end{enumerate}
+
+Следует отметить, что МНК Хаусдорфа подчиняется всем вышеперечисленным свойствам. Другими примерами могут служить следующие
+меры некомпактности, определенные на $Pb(C([0, a]; E))$, где $C([0, a]; E)$ - пространство непрерывных функций
+со значениями в сепарабельном Банаховом пространстве $E$:
+
+\begin{enumerate}
+    \item the modulus of fiber noncompactness
+    $$\varphi(\Omega) = \sup_{t \in [0, a]} e^{-pt} \chi_{E}(\Omega(t)),$$
+    где $p > 0$, $\chi_{E}$ - Хаусдорфова МНК в $E$ и $\Omega(t) = {y(t): y \in \Omega}$;
+    \item модуль равностепенной непрерывности, определяемый как
+    $$mod_{c}(\Omega) = \lim_{\delta \rightarrow 0} \sup_{y \in \Omega} \max_{|t_1 - t_2| \leq \delta} \norm{y(t_1) - y(t_2)}.$$
+\end{enumerate}
+
+Обратите внимание, что эти МНК удовлетворяют всем вышеупомянутым свойствам, кроме регулярности. Чтобы получить регулярную МНК
+в пространстве $C([0, a]; E)$, мы можем рассмотреть МНК
+
+$$\nu(\Omega) = \bigg( \varphi(\Omega),mod_{C}(\Omega) \bigg)$$
+
+\noindent со значениями в конусе $\mathbb{R}^{2}$ с естественным частичным порядком.
+
+\begin{definition}
+    Пусть $X \subseteq \mathcal{E}$ - замкнутое подмножество; многозначное отображение (мультиотображение)
+    $\mathcal{F}: X \rightarrow K(\mathcal{E})$ называется полунепрерывным сверху (п.н.с), если прообраз
+    $$\mathcal{F}^{-1}(V) = \{x \in X: \mathcal{F}(x) \subset V\}$$
+    каждого открытого множества $V \subset \mathcal{E}$ открыто в $X$.
+\end{definition}
 
 \clearpage
 

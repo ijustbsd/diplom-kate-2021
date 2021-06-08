@@ -351,9 +351,90 @@ $\mathfrak{f}(\cdot, \lambda)$ состоит из единственной фу
 Теперь, применяя гомотопические и нормировочные свойства топологической степени, получаем
 $$deg(i - \mathfrak{F}(\cdot, 1), \mathfrak{B}) = deg(i - \mathfrak{F}(\cdot, 0), \mathfrak{B}) = 1$$
 что, по свойству существования топологической степени, дает желаемый результат.
-$\square$
+
+\begin{flushright}
+    $\square$
+\end{flushright}
 
 \section{Ограниченность решений на полуоси}
+
+Полученная априорная оценка (3.19) позволяет доказать следующее утверждение о существовании ограниченных на $[0, \infty)$ решений задачи
+(\ref{eq:cd_0q})-(\ref{eq:cd_0q_x0}).
+
+\begin{theorem}
+    Предположим, что $d > a$, выполнены условия (F1)-(F5) и функция G из условия (F5) принадлежит пространству $L^r[0, \infty)$,
+    где $r > \frac{1}{q}$. Тогда каждое решение задачи (\ref{eq:cd_0q})-(\ref{eq:cd_0q_x0}) ограничено на $[0, \infty)$.
+\end{theorem}
+
+\noindent \textit{Доказательство.} В силу теоремы 18 все решения задачи (\ref{eq:cd_0q})-(\ref{eq:cd_0q_x0}) определены на $[0, \infty)$
+и удовлетворяют оценке (3.19). Поскольку
+
+\begin{equation*}
+    E_q((-d+a)t)\norm{x_0} \rightarrow 0 \quad \text{при} е \rightarrow \infty,
+\end{equation*}
+
+\noindent для доказательства теоремы достаточно показать, что выражение
+
+\begin{equation}
+    \label{eq:int_ts}
+    \int_0^t (t-s)^{q-1} E_{q,q}\Big((-d+a)(t-s)^{q}\Big)G(s)ds
+\end{equation}
+
+\noindent ограничено, для $t \in (0, \infty)$.
+
+Пусть при $\tau > T$ справедлива следующая асимптотика для функции $E_{q,q}(\tau)$ (см. \cite{gorenflo})
+
+\begin{equation*}
+    0 \leq E_{q,q}\Big((-d+a) \tau\Big) < \frac{c}{\tau},
+\end{equation*}
+
+\noindent где $C$ - постоянная. Тогда при $\tau > T^{\frac{1}{q}}$ имеем следующую оценку:
+
+\begin{equation*}
+    0 \leq E_{q,q}\Big((-d+a) \tau^q \Big)| < \frac{c}{\tau},
+\end{equation*}
+
+\noindent Для $\tau \leq T^{\frac{1}{q}}$ справедлива оценка $E_{q,q}(\tau^q) \leq M$.
+
+Оценим для больших $t$ выражение (\ref{eq:int_ts}):
+
+\begin{equation*}
+    \begin{gathered}
+        \left| \int_0^t (t-s)^{q-1} E_{q,q} ((-d+a)(t-s)^{q})G(s)ds \right| \leq \\
+        \leq \int_{t-T^{\frac{1}{q}}}^{t}(t-s)^{q-1} E_{q,q} \Big( (-d+a)(t-s)^{q} \Big) \left| G(s) \right| ds + \\
+        + \int_0^{t-T^{\frac{1}{q}}} (t-s)^{q-1} E_{q,q} \Big( (-d+a)(t-s)^{q} \Big) \left| G(s) \right| ds = I_1(t) + I_2(t)
+    \end{gathered}
+\end{equation*}
+
+\noindent Пусть $\frac{1}{q} + \frac{1}{r} = 1$, тогда по неравенству Гёльдера
+
+\begin{equation*}
+    I_1(t) \leq \left( \int_{t-T^{\frac{1}{q}}}^t (t-s)^{p(q-1)M^p ds} \right)^{\frac{1}{p}}
+    \left( \int_{t-T^{\frac{1}{q}}}^t \left|G(s)\right|^r ds \right)^{\frac{1}{r}}
+\end{equation*}
+
+\noindent Поскольку из $r > \frac{1}{q}$ следует, что
+$$p(q-1) + 1 > 1,$$
+мы получаем
+
+\begin{equation*}
+    I_1(t) \leq \left( \frac{T^{\frac{p(q-1)+1}{q}}}{p(q-1)+1} \right)^{\frac{1}{p}} \norm{G}_{L^r [0, \infty)}.
+\end{equation*}
+
+\noindent Для $I_2$ имеем оценку
+
+\begin{equation*}
+    \begin{gathered}
+        I_2(t) \leq \int_{T^{\frac{1}{q}}}^t \tau^{q-1} \frac{c}{\tau^q} \left| G(t- \tau) \right| d\tau \leq \\
+        \leq c \left( \int_{T^{\frac{1}{q}}}^t \tau^{-p} d\tau \right)^{\frac{1}{p}}
+        \left( \int_{T^{\frac{1}{q}}}^{t} G(t - \tau) d\tau \right)^{\frac{1}{r}} \leq \\
+        \leq c \left( \frac{t^{\frac{1}{q}(1-p)}}{p-1} \right)^{\frac{1}{p}} \norm{G}_{L^r[0, \infty)}
+    \end{gathered}
+\end{equation*}
+
+\begin{flushright}
+$\square$
+\end{flushright}
 
 \clearpage
 

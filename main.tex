@@ -283,9 +283,79 @@ $deg(i - \mathcal{F}_0, \overline{V}) = deg(i - \mathcal{F}_1, \overline{V})$.
 
 \section{Априорные оценки решений}
 
+Пусть $H$ - сепарабельное Гильбертово пространство. Рассмотрим задачу Коши для полулинейного дифференциального включения
+дробного порядка в $H$:
+
+\begin{equation}
+    \label{eq:cd_0q}
+    {}^CD_{0}^{q}x(t) \in Ax(t) + F(t, x(t)), \quad t \in [0, T]
+\end{equation}
+
+\begin{equation}
+    \label{eq:cd_0q_x0}
+    x(0) = x_0,
+\end{equation}
+
+\noindent где $0 < q < 1$ и линейный оператор $A$ удовлетворяет следующему условию:
+(A) $A: D(A) \subseteq H \rightarrow H$ - линейный замкнутый (не обязательно ограниченный) оператор, порождающий ограниченную $C_0$-полугруппу
+${U_A(t)}_{t \geq 0}$ линейных операторов в $H$ и такой, что
+
+\begin{equation*}
+    \langle Ax, x \rangle \leq -d \norm{x}^2, \forall x \in D(A)
+\end{equation*}
+
+\noindent для некоторых $d > 0$.
+
 \clearpage
 
-\section{Существование результата}
+\section{Существование решения}
+
+Из теоремы 18 можно получить следующий результат о существовании решения задачи \ref{eq:cd_0q} - \ref{eq:cd_0q_x0} на произвольном
+интервале $[0, T]$.
+
+\begin{theorem}
+    При указанных выше условиях задача (\ref{eq:cd_0q})-(\ref{eq:cd_0q_x0}) имеет слабое решение на $[0, T]$ для каждого $T > 0$.
+\end{theorem}
+
+\noindent \textit{Доказательство.} Рассмотрим семейство многозначных интегральных операторов
+$\mathfrak{F}: C([0, T]; H) \times [0, 1] \multimap (C([0, T]; H)$, определенное следующим образом:
+
+\begin{equation}
+    \label{eq:F_xlambda}
+    \mathfrak{F}(x, \lambda) = {z = \mathcal{G}_A (t) x_0 + \lambda \int_0^t (t-s)^{q-1} \mathcal{T}_A (t-s) f(s) ds:
+    f \in \mathcal{P}_F (x)},
+\end{equation}
+
+\noindent где $\mathcal{P}_F$ - мультиоператор суперпозиции, определённый в (3.3).
+
+Ясно, что каждая неподвижная точка $x_{\lambda} \in C([0, T]; H)$ мультиотображения $F (\cdot, \lambda), \lambda \in [0, 1]$,
+является слабым решением задачи
+
+\begin{equation}
+    \label{eq:cd_0q_l}
+    {}^CD_{0}^{q}x(t) \in Ax(t) + \lambda F(t, x(t)), \quad t \in [0, T]
+\end{equation}
+
+\begin{equation}
+    \label{eq:cd_0q_x0_l}
+    x(0) = x_0.
+\end{equation}
+
+Более того, известно (см. \cite{afanasova_rm}, \cite{benedetti}, \cite{kamenskii_fpt}, \cite{kamenskii_aa}, \cite{kamenskii_fpta17},
+\cite{kamenskii_fpta19}, \cite{kamenskii_m}), что семейство (\ref{eq:F_xlambda}) имеет компактные выпуклые значения и уплотняется относительно
+МНК $\nu$ в $C([0, T]; H)$ (см. раздел 2). Поскольку мультиоператоры $\lambda F$ удовлетворяют условиям (F1)-(F5) независимо от $\lambda$,
+применяя теорему 18, мы заключаем, что существует постоянная $\mathcal{C}(T)$ такая, что все решения задачи
+(\ref{eq:cd_0q_l})-(\ref{eq:cd_0q_x0_l}) удовлетворяют условию априорной оценки
+$$\norm{x_{\lambda}} \leq \mathcal{C}(T).$$
+
+\noindent Итак, мультиоператоры $\mathfrak{f}(\cdot, \lambda)$ из семейства (\ref{eq:F_xlambda}) не имеют неподвижных точек на границе шара
+$\mathfrak{B}$ пространства $C([0, T]; H)$ с центром в нуле радиуса $\mathcal{C}(T) + 1$. Обратите внимание, что диапазон мультиоператора
+$\mathfrak{f}(\cdot, \lambda)$ состоит из единственной функции $y(t) = \mathcal{G}_A(t)x_0$, являющейся его фиксированной точкой.
+
+Теперь, применяя гомотопические и нормировочные свойства топологической степени, получаем
+$$deg(i - \mathfrak{F}(\cdot, 1), \mathfrak{B}) = deg(i - \mathfrak{F}(\cdot, 0), \mathfrak{B}) = 1$$
+что, по свойству существования топологической степени, дает желаемый результат.
+$\square$
 
 \clearpage
 

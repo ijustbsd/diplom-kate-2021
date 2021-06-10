@@ -17,6 +17,11 @@ all:
 	pdflatex diplom.tex
 	evince diplom.pdf &
 
+presentation:
+	pdflatex presentation.tex
+	pdflatex presentation.tex
+	evince presentation.pdf &
+
 clean:
 	rm -f *.aux *.log *.out *.toc *.pdf *.bbl *.bcf *.blg *.xml *.nav *.snm
 	rm -f images/*.pdf

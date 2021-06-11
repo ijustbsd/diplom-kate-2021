@@ -34,6 +34,31 @@
     \end{frame}
 
     \begin{frame}
+        \frametitle{Задача Коши для полулинейного дифференциального включения дробного порядка}
+        Рассмотрим задачу Коши для полулинейного дифференциального включения дробного порядка в $H$:
+
+        \begin{equation}
+            \label{eq:cd_0q}
+            {}^CD_{0}^{q}x(t) \in Ax(t) + F(t, x(t)), \quad t \in [0, T]
+        \end{equation}
+
+        \begin{equation}
+            \label{eq:cd_0q_x0}
+            x(0) = x_0,
+        \end{equation}
+
+        \noindent где $0 < q < 1$ и линейный оператор $A$ удовлетворяет следующему условию:
+        (A) $A: D(A) \subseteq H \rightarrow H$ - линейный замкнутый (не обязательно ограниченный) оператор, порождающий ограниченную $C_0$-полугруппу
+        ${U_A(t)}_{t \geq 0}$ линейных операторов в $H$ и такой, что
+
+        \begin{equation*}
+            \langle Ax, x \rangle \leq -d \norm{x}^2, \forall x \in D(A)
+        \end{equation*}
+
+        \noindent для некоторых $d > 0$.
+    \end{frame}
+
+    \begin{frame}
         \frametitle{Функция априорной оценки}
         Функция априорной оценки $\mathcal{C}$ на интервале $[0, T]$:
         \begin{equation}
@@ -53,7 +78,7 @@
         \frametitle{График функции априорной оценки}
         \begin{figure}
             \includegraphics[width=0.75\linewidth]{plot}
-            \caption{График функции (\ref{eq:C}) при $x_0 = 1$; $q = 0.5$; $d = 2$; $a = 1$; $t = 1$.}
+            \caption{График функции (\ref{eq:C}) при $\norm{x_0} = 1$; $q = 0.5$; $d = 2$; $a = 1$; $T = 1$.}
         \end{figure}
     \end{frame}
 

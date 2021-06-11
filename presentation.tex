@@ -27,9 +27,9 @@
         \frametitle{Постановка задачи}
         В данной работе ставятся и решаются следующие задачи:
         \begin{enumerate}
-            \item 1;
-            \item 2;
-            \item 3.
+            \item Найти условие разрешимости задачи (\refeq{eq:cd_0q});
+            \item Обосновать возможность применения метода теории степени уплотняющих отображений;
+            \item Найти графический вид функции, являющейся априорной оценкой решений.
         \end{enumerate}
     \end{frame}
 
@@ -56,6 +56,24 @@
         \end{equation*}
 
         \noindent для некоторых $d > 0$.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{F}
+        $F: [0, T] \times H \rightarrow K_v(H)$ - мультиотображение, основным свойством которого является:
+        \begin{equation*}
+            \sup_{y \in F(t,x)} \langle y,x \rangle \leq a \norm{x}^2 + G(t), \quad t \in [0, T]
+        \end{equation*}
+        где $G: R_+ \rightarrow R_+$ - локальная $L^\infty$ -функция, т. е. $G|_{[0, T]} \in L^\infty[0, T]$ для каждого $T > 0$.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Теорема о существовании априорной оценки}
+        \textbf{Теорема:}
+        При указанных выше условиях существует непрерывная функция $C: [0, +\infty) \rightarrow [0, +\infty)$ такая,
+        что для любого решения $x$ задачи (\ref{eq:cd_0q})-(\ref{eq:cd_0q_x0}), определенного на интервале $[0, T]$,
+        справедлива следующая априорная оценка:
+        $$\norm{x}_{C([0, T], H)} \leq \mathcal{C}(T).$$
     \end{frame}
 
     \begin{frame}

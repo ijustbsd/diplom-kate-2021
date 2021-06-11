@@ -304,6 +304,30 @@ ${U_A(t)}_{t \geq 0}$ линейных операторов в $H$ и такой
 
 \noindent для некоторых $d > 0$.
 
+Предполагается, что мультиотображение $F: [0, T] \times H \rightarrow K_v(H)$ удовлетворяет следующим условиям:
+
+\begin{enumerate}[start=1,label={F\arabic*)}]
+    \item функция $F(\cdot, x): [0, T] \rightarrow K_v(H)$ допускает измеримый выбор для каждого $T > 0$ и $x \in H$,
+    т. е. существует измеримая функция $f: [0, T] \rightarrow H$ такая, что что $f(t) \in F(t, x)$ для п. в. $t \in [0, T]$;
+    \item мультиотображение $F(t, \cdot): \rightarrow K_v(H)$ п.н.с для каждого $T > 0$ и п. в. $t \in [0, T]$;
+    \item для каждого $R > 0$ и $T > 0$ существует функция $m_R \in L^\infty [0, T]$ такая, что из $x \in H, \norm{x} \leq R$ следует
+    $$\norm{F(t,x)} \leq m_R(t) \text{ для п. в. } t \in [0, T];$$
+    \item для каждого $T > 0$ существует $\mathcal{k} \in L^\infty [0, T]$ такое, что для любого ограниченного множества
+    $\omega \subset H$ выполняется:
+    $$\chi (t, \Omega) \leq \mathcal{k} (t) \chi (\Omega),$$
+    где $\chi$ обозначает МНК Хаусдорфа в пространстве $H$;
+    \item существует такое $a \geq 0$, что
+    $$\sup_{y \in F(t,x)} \langle y,x \rangle \leq a \norm{x}^2 + G(t), \quad t \in [0, T],$$
+    где $G: R_+ \rightarrow R_+$ - локальная $L^\infty$ -функция, т. е. $G|_{[0, T]} \in L^\infty[0, T]$ для каждого $T > 0$.
+\end{enumerate}
+
+Из условий (F1) - (F3) следует, что для каждого $T > 0$ мультиоператор суперпозиции
+$\mathcal{P}_F: C([0, T]; H) \multimap L^\infty ((0, T); H)$ определяется формулой:
+
+\begin{equation}
+    \mathcal{P}_F(x) = \{ f \in L^\infty ((0, T); H): f(s) \in F(s, x(s)) \text{ для п.в. } s \in [0, T] \}.
+\end{equation}
+
 \section{Существование решения}
 
 Из теоремы 18 можно получить следующий результат о существовании решения задачи (\ref{eq:cd_0q})-(\ref{eq:cd_0q_x0}) на произвольном

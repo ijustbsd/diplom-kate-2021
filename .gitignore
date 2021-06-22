@@ -1,6 +1,8 @@
 .vscode
 .venv
 
+_minted_diplom
+
 *.aux
 *.log
 *.out

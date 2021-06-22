@@ -11,11 +11,12 @@ all:
 	libreoffice --headless --convert-to pdf tp-output.fodt
 
 	# .tex
-	pdflatex diplom.tex
+	pdflatex -shell-escape diplom.tex
 	biber diplom
-	pdflatex diplom.tex
-	pdflatex diplom.tex
-	evince diplom.pdf &
+	pdflatex -shell-escape diplom.tex
+	pdflatex -shell-escape diplom.tex
+	mv diplom.pdf Тарасова.pdf
+	evince Тарасова.pdf &
 
 presentation:
 	pdflatex presentation.tex

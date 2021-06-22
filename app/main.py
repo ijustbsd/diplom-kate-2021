@@ -34,7 +34,7 @@ def result_func(t, g):
 
     result = []
     for x in t:
-        result.append(ml(x, b=1) * x0 + quad(f, 0, 1, args=(x,))[0])
+        result.append(ml(x, b=1) * x0 + quad(f, 0, x, args=(x,))[0])
     return np.array(result)
 
 x = np.arange(-0.01, 1, 0.05)

@@ -1,7 +1,7 @@
 .vscode
 .venv
 
-_minted_diplom
+_minted-diplom
 
 *.aux
 *.log

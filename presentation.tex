@@ -62,7 +62,10 @@
         \frametitle{F}
         $F: [0, T] \times H \rightarrow K_v(H)$ - мультиотображение, основным свойством которого является:
         \begin{equation*}
-            \sup_{y \in F(t,x)} \langle y,x \rangle \leq a \norm{x}^2 + G(t), \quad t \in [0, T]
+            \begin{gathered}
+                \exists \  a \geq 0 \  \text{такое, что}\\
+                \sup_{y \in F(t,x)} \langle y,x \rangle \leq a \norm{x}^2 + G(t), \quad t \in [0, T]
+            \end{gathered}
         \end{equation*}
     \end{frame}
 
@@ -73,6 +76,9 @@
         что для любого решения $x$ задачи (\ref{eq:cd_0q})-(\ref{eq:cd_0q_x0}), определенного на интервале $[0, T]$,
         справедлива следующая априорная оценка:
         $$\norm{x}_{C([0, T], H)} \leq \mathcal{C}(T).$$
+
+        \textbf{Теорема:}
+        При указанных выше условиях задача (\ref{eq:cd_0q})-(\ref{eq:cd_0q_x0}) имеет слабое решение на $[0, T]$ для каждого $T > 0$.
     \end{frame}
 
     \begin{frame}

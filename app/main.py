@@ -22,7 +22,7 @@ def g3(x):
     return 1
 
 def ml(z, a=q, b=q):
-    k = np.arange(100).reshape(-1, 1)
+    k = np.arange(1, 100).reshape(-1, 1)
     E = z ** k / gamma(a * k + b)
     return np.sum(E, axis=0)
 
@@ -34,10 +34,13 @@ def result_func(t, g):
 
     result = []
     for x in t:
-        result.append(ml(x, b=1) * x0 + quad(f, 0, x, args=(x,))[0])
+        if x == 0:
+            result.append(ml(x, b=1) * x0)
+        else:
+            result.append(ml(x, b=1) * x0 + quad(f, 0, x, args=(x,))[0])
     return np.array(result)
 
-x = np.arange(-0.01, 1, 0.05)
+x = np.arange(0, 1, 0.01)
 
 plt.rcParams.update({'font.size': 24})
 

@@ -7,7 +7,7 @@ x0 = 1
 q = 0.5
 d = 2
 a = 1
-t = 1
+T = 1
 
 def float_pow(x, y):
     return np.sign(x) * np.abs(x) ** y
@@ -18,7 +18,7 @@ def g1(x):
 def g2(x):
     return np.exp(x)
 
-def g3(x):
+def g3(_):
     return 1
 
 def ml(z, a=q, b=q):
@@ -34,13 +34,13 @@ def result_func(t, g):
 
     result = []
     for x in t:
-        if x == 0:
-            result.append(ml(x, b=1) * x0)
-        else:
-            result.append(ml(x, b=1) * x0 + quad(f, 0, x, args=(x,))[0])
+        curr_result = ml(x, b=1) * x0
+        if x != 0:
+            curr_result += quad(f, 0, x, args=(x,))[0]
+        result.append(curr_result)
     return np.array(result)
 
-x = np.arange(0, 1, 0.01)
+x = np.arange(0, T, 0.01)
 
 plt.rcParams.update({'font.size': 24})
 

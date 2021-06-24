@@ -22,7 +22,7 @@ def g3(_):
     return 1
 
 def ml(z, a=q, b=q):
-    k = np.arange(1, 100).reshape(-1, 1)
+    k = np.arange(0, 100).reshape(-1, 1)
     E = z ** k / gamma(a * k + b)
     return np.sum(E, axis=0)
 
